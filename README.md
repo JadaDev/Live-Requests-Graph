@@ -13,7 +13,7 @@ This PHP script provides a live graph representation of incoming requests to a w
     -   **Mac:** Install [MAMP](https://www.mamp.info/).
     -   **Linux:** Use the package manager specific to your distribution (e.g., `apt` for Ubuntu, `yum` for CentOS).
 2.  Download or clone the repository to your local machine.
-3.  Edit ` config.php` to your database information.
+3.  Edit `config.php` to your database information & Edit `index.php` to add CloudFlare API (CloudFlare_Global_API_Key, CloudFlare_Zone_ID, CloudFlare_Email)
 4.  Create a database named "visitors" in your preferred database management system (e.g., MySQL, PostgreSQL).
     
 5.  Import the `visitors.sql` file into the "visitors" database. This file contains the necessary table structure for storing visitor data.
