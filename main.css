@@ -73,7 +73,12 @@ body {
 	  background-color: #4CAF50;
 	  color: white;
 	  }
-	  
+
+	  .pause-button {
+  	  background-color: #c4c400;
+  	  color: white;
+	  }
+
 	  .stop-button {
 	  background-color: #f44336;
 	  color: white;
@@ -83,6 +88,7 @@ body {
 	  background-color: #2196F3;
 	  color: white;
 	  }
+
 	  .volume-control {
 	  display: flex;
 	  align-items: center;
