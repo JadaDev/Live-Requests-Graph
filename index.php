@@ -17,6 +17,7 @@ mysqli_close($conn);
     <h1>JADA Live Graph Requests</h1>
     <link rel="stylesheet" href="main.css">
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	 <script src="https://cdn.jsdelivr.net/npm/plotly.js@latest"></script>
     <script>
         $(document).ready(function() {
             function updateStatistics() {
@@ -196,6 +197,74 @@ mysqli_close($conn);
       audio.autoplay = true;
     </script>
   </body>
+	<?php
+$api_key = "CLOUDFLARE_API"; // CLOUDFLARE_GLOBAL_API HERE
+$email = "CLOUDFLARE_EMAIL"; // CLOUDFLARE_EMAIL HERE
+
+$url = "https://api.cloudflare.com/client/v4/graphql";
+
+$headers = array(
+    "X-Auth-Email: $email",
+    "X-Auth-Key: $api_key",
+    "Content-Type: application/json"
+);
+
+$query = '{
+  viewer {
+    zones(filter: { zoneTag: "CLOUDFLARE_ZONEID" }) { 
+      httpRequests1dGroups(limit: 1, filter: { date_geq: "2023-05-15" }) {
+        sum {
+          requests
+        }
+      }
+    }
+  }
+}'; // ZONE_ID of the website HERE
+y
+$data = array(
+    'query' => $query,
+);
+
+$jsonData = json_encode($data);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
+
+$response = curl_exec($ch);
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+if ($httpCode == 200) {
+    $responseData = json_decode($response, true);
+
+    if (isset($responseData['errors'])) {
+        echo "GraphQL request failed with errors: " . json_encode($responseData['errors']);
+        exit();
+    }
+
+    $requestsCount = $responseData['data']['viewer']['zones'][0]['httpRequests1dGroups'][0]['sum']['requests'];
+
+    echo "<div id='graph'></div>";
+    echo "<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>";
+    echo "<script>";
+    echo "var requestsCount = " . json_encode($requestsCount) . ";";
+    echo "var data = [{ x: ['Past 24 hours'], y: [requestsCount], type: 'bar', name: 'Requests Count' }];";
+    echo "var layout = { 
+        title: 'Cloudflare Requests Count',
+        xaxis: { title: 'Time Range' },
+        yaxis: { title: 'Requests Count' },
+        legend: { orientation: 'h' }
+    };";
+    echo "Plotly.newPlot('graph', data, layout);";
+    echo "</script>";
+} else {
+    echo "API request failed with status code: $httpCode";
+}
+
+curl_close($ch);
+?>
   <footer>
   <p>This website is made by JadaDev with ❤ and used CloudFlare security Protection, including CAPTCHA verification.</p>
 </footer>
