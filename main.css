@@ -3,7 +3,6 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 140vh;
         margin: 20;
         background-image: url('background.gif');
         background-repeat: no-repeat;
