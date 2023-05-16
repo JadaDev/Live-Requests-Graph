@@ -1,4 +1,4 @@
-![Alt text](https://github.com/JadaDev/Live-Requests-Graph/blob/main/graph_preview.png)![CloudFlare](https://github.com/JadaDev/Live-Requests-Graph/blob/main/graph_preview_cf.png)
+![Alt text](https://github.com/JadaDev/Live-Requests-Graph/blob/main/graph_preview.png)
 
 # Live Graph Requests
 
@@ -48,3 +48,4 @@ The Live Graph Requests script utilizes the following technologies:
 ## License
 
 This script is licensed under the [MIT License](https://chat.openai.com/LICENSE). Feel free to modify and use it according to your needs.
+![CloudFlare](https://github.com/JadaDev/Live-Requests-Graph/blob/main/graph_preview_cf.png)
