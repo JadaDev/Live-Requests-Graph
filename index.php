@@ -45,39 +45,6 @@ mysqli_close($conn);
   </head>
   <body>
       <h1>JADA Live Requests Graph</h1>
-
-    <?php
-    require 'config.php';
-
-    $conn = new mysqli($servername, $username, $password, $database, $port);
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $totalIdCount = 0;
-    $sql = "SELECT COUNT(id) AS total_count FROM visitor_data";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $totalIdCount = $row["total_count"];
-    }
-
-    $currentTimestamp = time();
-    $last60SecondsTimestamp = $currentTimestamp - 60;
-    $last60SecondsIdCount = 0;
-    $sql = "SELECT COUNT(id) AS count_60_seconds FROM visitor_data WHERE time >= $last60SecondsTimestamp";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $last60SecondsIdCount = $row["count_60_seconds"];
-    }
-
-    $conn->close();
-    ?>
-
-
-
     <div class="links-container">
       <a>If you want to be in the LeaderBoard Just send proof to :</a>
       <a href="https://t.me/jadadev2723" target="_blank"> @jadadev2723</a>
