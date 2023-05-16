@@ -87,25 +87,24 @@ mysqli_close($conn);
       <button class="button copy-button" onclick="copyUrl()">Copy URL</button>
     </div>
 	<div class="music-controls">
-	      <button id="playButton" class="button play-button">Play</button>
-	  <button id="pauseButton" class="button play-button">Pause</button>
-      <button id="stopButton" class="button stop-button">Stop</button>
+	  <button id="playButton" class="button play-button">▶</button>
+	  <button id="pauseButton" class="button pause-button">⏸</button>
+      <button id="stopButton" class="button stop-button">⏹</button>
 	</div>
 	<div class="music-controls">
       <div class="volume-control">
-        <label for="volumeControl">Music Volume Controller : </label>
+        <label for="volumeControl">Volume</label>
         <div class="volume-slider">
           <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.5">
         </div>
       </div>
     </div>
-	    <div class="music-time">
-		<a> Music Time Controller : </a>
-      <span id="currentTime">0:00</span>
-      <input type="range" id="progressControl" min="0" max="100" step="0.01" value="0">
-      <span id="duration">0:00</span>
-    </div>
-
+	<a>&nbsp;</a>
+	<div class="music-time">
+		<span id="currentTime">0:00</span>
+			<input type="range" id="progressControl" min="0" max="100" step="0.01" value="0">
+		<span id="duration">0:00</span>
+	</div>
     <div class="graph-container">
       <iframe src="graph.php" width="820" height="450"></iframe>
     </div>
