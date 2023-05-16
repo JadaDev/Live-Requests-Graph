@@ -1,4 +1,4 @@
-![Alt text](https://github.com/JadaDev/Live-Requests-Graph/blob/main/graph_preview.png)(https://github.com/JadaDev/Live-Requests-Graph/blob/main/graph_preview_cf.png)
+![Alt text](https://github.com/JadaDev/Live-Requests-Graph/blob/main/graph_preview.png)![CloudFlare](https://github.com/JadaDev/Live-Requests-Graph/blob/main/graph_preview_cf.png)
 
 # Live Graph Requests
 
