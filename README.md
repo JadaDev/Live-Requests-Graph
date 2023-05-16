@@ -1,5 +1,5 @@
 ![Alt text](https://github.com/JadaDev/Live-Requests-Graph/blob/main/graph_preview.png)
-
+![Alt text](https://github.com/JadaDev/Live-Requests-Graph/blob/main/graph_preview_cf.png)
 
 # Live Graph Requests
 
