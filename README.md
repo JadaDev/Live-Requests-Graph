@@ -47,5 +47,5 @@ The Live Graph Requests script utilizes the following technologies:
 
 ## License
 
-This script is licensed under the [MIT License](https://chat.openai.com/LICENSE). Feel free to modify and use it according to your needs.
+This script is licensed under the [MIT License](https://opensource.org/license/mit/). Feel free to modify and use it according to your needs.
 ![CloudFlare](https://github.com/JadaDev/Live-Requests-Graph/blob/main/graph_preview_cf.png)
